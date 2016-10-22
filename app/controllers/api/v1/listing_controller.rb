@@ -2,7 +2,7 @@ class Api::V1::ListingController < Api::V1::BaseController
   respond_to :json
 
   def create
-    # binding.pry
+    binding.pry
     listing = Listing.create!(listing_params)
     respond_with listing
   end
