@@ -2,9 +2,9 @@ class Api::V1::ListingController < Api::V1::BaseController
   respond_to :json
 
   def create
-    binding.pry
+    # binding.pry
     listing = Listing.create!(listing_params)
-    respond_with listing
+    respond_with(listing, status: 201, location: api_v1_listing_path(listing))
   end
 
   def update
