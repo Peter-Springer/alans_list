@@ -2,7 +2,6 @@ class Api::V1::ListingController < Api::V1::BaseController
   respond_to :json
 
   def create
-    # binding.pry
     listing = Listing.create!(listing_params)
     respond_with(listing, status: 201, location: api_v1_listing_path(listing))
   end
@@ -28,7 +27,8 @@ class Api::V1::ListingController < Api::V1::BaseController
                                       :price,
                                       :description,
                                       :user_id,
-                                      :category_id
+                                      :category_id,
+                                      :image_url,
                                       )
     end
 
